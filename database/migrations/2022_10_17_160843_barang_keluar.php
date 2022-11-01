@@ -14,14 +14,11 @@ return new class extends Migration
     public function up()
     {
         //
-        Schema::create('stok',function (Blueprint $table){
-            $table->char('id_barang',8)->primary();
-            $table->integer('jml_masuk')->nullable();
-            $table->integer('jml_keluar')->nullable();
-            $table->integer('total_barang')->nullable();
-            
+        Schema::create('barang_keluar',function (Blueprint $table){
+            $table->char('id_barang',8);
+            $table->date('Y:m:d');
+            $table->integer('jml_keluar');
         });
-        
     }
 
     /**
@@ -32,6 +29,6 @@ return new class extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('stok');
+        Schema::drop('barang_keluar');
     }
 };
