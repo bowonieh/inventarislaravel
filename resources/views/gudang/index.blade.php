@@ -38,6 +38,7 @@
         </td>
         <td>
             <a href="gudang/edit/{{$tempat->id_lokasi}}"><button>EDIT</button></a>
+            <a href="gudang/hapus/{{$tempat->id_lokasi}}"><button>Hapus</button></a>
         </td>
     </tr>
     @endforeach

@@ -29,5 +29,8 @@ Route::get('/supplier/detil/{id}',[Supplier::class,'detil/{$id}']);
 Route::get('/gudang',[LokasiController::class,'index']);
 Route::get('/gudang/tambah',[LokasiController::class,'formTambah']);
 Route::post('/gudang/simpan',[LokasiController::class,'simpan']);
+Route::get('/gudang/edit/{id}',[LokasiController::class,'edit']);
+Route::post('/gudang/edit/editsimpan',[LokasiController::class,'editsimpan']);
+Route::get('/gudang/hapus/{id}',[LokasiController::class,'hapus']);
 //Route login
 Route::post('auth',[logincontroller::class,'authenticate']);
