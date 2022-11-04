@@ -1,31 +1,39 @@
-<h4>Form Tambah data lokasi</h4>
-<hr>
-<form method="POST" action="simpan">
-    <table border="0" cellpadding="20px">
-        <tr>
-            <td>
-                Nama Lokasi
-            </td>
-            <td>
-                <input type="text" name="nama_lokasi" />
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Penanggung Jawab
-            </td>
-            <td>
-                <input type="text" name="penanggung_jawab" />
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Keterangan
-            </td>
-            <td>
-                <textarea name="keterangan" cols="20" rows="5"></textarea>
-            </td>
-        </tr>
-    </table>
-    <button type="submit" value="Simpan">SIMPAN</button>
-</form>
+@extends('template')
+@section('content')
+<div class="card">
+    <div class="card-header">
+        <h4>Form Tambah data lokasi</h4>
+        <hr>
+    </div>
+    <form method="POST" action="simpan">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label class="form-label">Nama Lokasi</label>
+                        <input type="text" name="nama_lokasi" class="form-control" />
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label class="form-label">Penanggung Jawab</label>
+                        <input type="text" name="penanggung_jawab" class="form-control" />
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label class="form-label">Nama Lokasi</label>
+                        <textarea class="form-control" name="keterangan" rows="3">
+
+                        </textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-primary" type="submit">SIMPAN</button>
+        </div>
+    </form>
+</div>
+
+@endsection

@@ -1,6 +1,8 @@
-<a href="gudang/tambah"><button>Tambah Lokasi</button></a>
-<p>
-<table border="1" cellspacing="0" cellpadding="10px">
+@extends('template')
+@section('content')
+<a href="gudang/tambah"><btn class="btn btn-primary">Tambah Lokasi</btn></a>
+</p>
+<table class="table table-striped table-hover table-bordered">
     <tr>
         <th>
             NO
@@ -18,11 +20,11 @@
             AKSI
         </th>
     </tr>
-    <?php 
-        $no = 1;
+    <?php
+    $no = 1;
     ?>
     @foreach($lokasi as $tempat)
-    
+
     <tr>
         <td>
             {{$no++}}
@@ -37,9 +39,10 @@
             {{$tempat->keterangan}}
         </td>
         <td>
-            <a href="gudang/edit/{{$tempat->id_lokasi}}"><button>EDIT</button></a>
-            <a href="gudang/hapus/{{$tempat->id_lokasi}}"><button>Hapus</button></a>
+            <a href="gudang/edit/{{$tempat->id_lokasi}}"><btn class="btn btn-success">EDIT</btn></a>
+            <a href="gudang/hapus/{{$tempat->id_lokasi}}"><btn class="btn btn-danger">Hapus</btn></a>
         </td>
     </tr>
     @endforeach
 </table>
+@endsection
