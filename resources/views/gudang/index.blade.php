@@ -1,6 +1,7 @@
 @extends('template')
 @section('content')
 <a href="gudang/tambah"><btn class="btn btn-primary">Tambah Lokasi</btn></a>
+<a href="logout"><btn class="btn btn-warning">Logout</btn></a>
 </p>
 <table class="table table-striped table-hover table-bordered">
     <tr>

@@ -14,6 +14,7 @@ class LokasiController extends Controller
     public function __construct()
     {
         $this->lokasiModel = new LokasiModel;
+        $this->middleware('auth:web',[]);
     }
     public function index()
     {

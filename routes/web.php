@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\logincontroller;
 use App\Http\Controllers\LokasiController;
+use App\Http\Controllers\OtentikasiController;
 use App\Http\Controllers\Supplier;
 use Illuminate\Support\Facades\Route;
 
@@ -33,4 +34,16 @@ Route::get('/gudang/edit/{id}',[LokasiController::class,'edit']);
 Route::post('/gudang/edit/editsimpan',[LokasiController::class,'editsimpan']);
 Route::get('/gudang/hapus/{id}',[LokasiController::class,'hapus']);
 //Route login
-Route::post('auth',[logincontroller::class,'authenticate']);
+#Route::post('auth',[logincontroller::class,'authenticate']);
+/*
+Route::controller(logincontroller::class)->group(function(){
+    Route::post('auth','authenticate');
+    Route::get('login','loginform')->name('login');
+    Route::get('logout','logout');
+});
+*/
+Route::controller(OtentikasiController::class)->group(function(){
+    Route::get('login','formlogin')->name('login');
+    Route::post('auth','authenticate');
+    Route::get('logout','logout');
+});
